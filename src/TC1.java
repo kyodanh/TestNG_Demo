@@ -2,6 +2,8 @@ import org.testng.annotations.*;
 
 public class TC1 {
 
+    //bai hoc ve test annotations và cac phuong chạy test case gom before , after , test
+
     @BeforeClass
     void BeforeClass(){
         System.out.println("this will execute before every Class");

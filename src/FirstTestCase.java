@@ -7,6 +7,8 @@ import org.testng.annotations.Test;
 
 public class FirstTestCase {
 
+    //bai hoc ve tao test case @test trong testNG
+
     @Test(priority = 1)
     void setup(){
         System.out.println("open brower");
