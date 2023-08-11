@@ -9,22 +9,39 @@
     <!--        </classes>-->
     <!--    </test>-->
 
-    <test name="annotationdemo">
+<!--    <test name="annotationdemo">-->
+<!--        <classes>-->
+<!--            <class name="TC1">-->
+<!--                <methods>-->
+<!--                    <include name="test1"/>-->
+<!--                    <include name="test2"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+
+<!--            <class name="TC2">-->
+<!--                <methods>-->
+<!--                    <include name="test3"/>-->
+<!--                    <include name="test4"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="grouptest">
+
+        <groups>
+            <run>
+<!--                <include name="sanity"/>-->
+<!--                <include name="regresstion"/>-->
+                <exclude name="sanity"/>
+            </run>
+        </groups>
+
+
         <classes>
-            <class name="TC1">
-                <methods>
-                    <include name="test1"/>
-                    <include name="test2"/>
-                </methods>
-            </class>
-
-            <class name="TC2">
-                <methods>
-                    <include name="test3"/>
-                    <include name="test4"/>
-                </methods>
-            </class>
-
+            <class name="GroupingExample"/>
         </classes>
     </test>
+    
+    
 </suite>

@@ -7,7 +7,7 @@ public class GroupingExample {
         System.out.println("this is test 1");
     }
 
-    @Test(groups = {"regresstion"})
+    @Test(groups = {"sanity"})
     void test2(){
         System.out.println("this is test 2");
     }
