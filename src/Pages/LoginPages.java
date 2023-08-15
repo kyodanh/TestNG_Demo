@@ -21,4 +21,9 @@ public class LoginPages {
         element = driver.findElement(By.xpath("//*[@id=\'login-button\']"));
         return element;
     }
+
+    public static WebElement Noti(WebDriver driver){
+        element = driver.findElement(By.xpath("//*[@id=\"login_button_container\"]/div/form/div[3]/h3"));
+        return element;
+    }
 }

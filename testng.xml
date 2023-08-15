@@ -1,61 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-
-    <!--    <test verbose="2" preserve-order="true" name="D:/java/TestNG_Demo">-->
-    <!--        <classes>-->
-    <!--            <class name="FirstTestCase"/>-->
-    <!--            <class name="SecondTestCase"/>-->
-    <!--        </classes>-->
-    <!--    </test>-->
-
-<!--        <test name="annotationdemo">-->
-<!--            <classes>-->
-<!--                <class name="TC1">-->
-<!--                    <methods>-->
-<!--                        <include name="test1"/>-->
-<!--                        <include name="test2"/>-->
-<!--                    </methods>-->
-<!--                </class>-->
-<!--                <class name="TC2">-->
-<!--                    <methods>-->
-<!--                        <include name="test3"/>-->
-<!--                        <include name="test4"/>-->
-<!--                    </methods>-->
-<!--                </class>-->
-<!--            </classes>-->
-<!--        </test>-->
-
-<!--    <test name="grouptest">-->
-
-<!--        <groups>-->
-<!--            <run>-->
-<!--                &lt;!&ndash;                <include name="sanity"/>&ndash;&gt;-->
-<!--                &lt;!&ndash;                <include name="regresstion"/>&ndash;&gt;-->
-<!--                <exclude name="sanity"/>-->
-<!--            </run>-->
-<!--        </groups>-->
-
-
+<!--    <parameter name="brower" value="chrome"></parameter>-->
+<!--    <parameter name="url" value="https://www.saucedemo.com/"></parameter>-->
+<!--    <test name="Login_chrome">-->
 <!--        <classes>-->
-<!--            <class name="GroupingExample"/>-->
+<!--            <class name="TestCase.LoginTC"></class>-->
 <!--        </classes>-->
 <!--    </test>-->
 
+<!--    <parameter name="brower" value="Edge"></parameter>-->
+<!--    <parameter name="url" value="https://www.saucedemo.com/"></parameter>-->
+<!--    <test name="Login_Edge">-->
+<!--        <classes>-->
+<!--            <class name="TestCase.LoginTC"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+
     <parameter name="brower" value="chrome"></parameter>
     <parameter name="url" value="https://www.saucedemo.com/"></parameter>
-   <test name="parametertest_chrome">
-       <classes>
-           <class name="ParametersExample"/>
-       </classes>
-   </test>
-
-    <parameter name="brower" value="Edge"></parameter>
-    <parameter name="url" value="https://www.saucedemo.com/"></parameter>
-    <test name="parametertest_Edge">
+    <parameter name="name_product" value="//*[text()='Sauce Labs Backpack']"></parameter>
+    <parameter name="name_pic" value="//img[@alt='Sauce Labs Backpack']"></parameter>
+    <test name="Home_Chrome">
         <classes>
-            <class name="ParametersExample"></class>
+            <class name="TestCase.HomeTC">
+<!--                <methods>-->
+<!--                    <include name="print_product"/>-->
+<!--                </methods>-->
+            </class>
         </classes>
-
     </test>
+
+<!--    <parameter name="brower" value="Edge"></parameter>-->
+<!--    <parameter name="url" value="https://www.saucedemo.com/"></parameter>-->
+<!--    <parameter name="name_product" value="//*[text()='Sauce Labs Backpack']"></parameter>-->
+<!--    <parameter name="name_pic" value="//img[@alt='Sauce Labs Backpack']"></parameter>-->
+<!--    <test name="Home_Edge">-->
+<!--        <classes>-->
+<!--            <class name="TestCase.HomeTC"></class>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>

@@ -1,3 +1,5 @@
+package Study;
+
 import Pages.LoginPages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

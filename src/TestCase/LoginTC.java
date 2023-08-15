@@ -3,6 +3,7 @@ package TestCase;
 import Pages.LoginPages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
@@ -39,7 +40,7 @@ public class LoginTC {
 
     @BeforeMethod
     @Parameters({"brower","url"})
-    void login_setup(String brower , String app){
+    void login_setup(String brower,String app){
         /////////////////////////////
         if(brower.equalsIgnoreCase("chrome")){
             System.out.println("this will execute before every method");
@@ -52,8 +53,19 @@ public class LoginTC {
             driver = new EdgeDriver();
             driver.manage().window().maximize();
         }
+        driver.get(app);
         /////////////////////////////
-        System.out.println("Case login");
+        try {
+            Thread.sleep(1500);
+        } catch(InterruptedException e) {
+            System.out.println("got interrupted!");
+        }
+    }
+
+    //////@test là 1 method 
+    @Test(priority = 1)
+    void CaseLoginPass(){
+        System.out.println("CaseLoginPass");
         LoginPages.username(driver).click();
         LoginPages.username(driver).sendKeys("standard_user");
         LoginPages.password(driver).click();
@@ -64,35 +76,59 @@ public class LoginTC {
         } catch(InterruptedException e) {
             System.out.println("got interrupted!");
         }
-    }
-
-    //////@test là 1 method 
-    @Test(priority = 1)
-    void checkdisplay(){
-        System.out.println("this test 1 ");
-        var a = driver.findElement(By.xpath("//*[@id=\'header_container\']/div[2]/span"));
-        Assert.assertTrue(a.isDisplayed());
-//        try {
-//            Thread.sleep(1500);
-//        } catch(InterruptedException e) {
-//            System.out.println("got interrupted!");
-//        }
 
     }
 
-//    @Test(priority = 2)
-//    void gotoproduct(){
-//        System.out.println("this test 2 ");
-//        driver.findElement(By.xpath("//*[@id=\'item_4_title_link\']/div")).click();
-//        try {
-//            Thread.sleep(1500);
-//        } catch(InterruptedException e) {
-//            System.out.println("got interrupted!");
-//        }
-//    }
+    @Test(priority = 2)
+    void CaseLogin_MissPassword() {
+        System.out.println("this test 2 ");
+        LoginPages.username(driver).click();
+        LoginPages.username(driver).sendKeys("standard_user");
+        LoginPages.password(driver).click();
+        LoginPages.password(driver).sendKeys("");
+        LoginPages.loginbutton(driver).click();
+        WebElement text = LoginPages.Noti(driver);
+//        System.out.println(text);
+//        Assert.assertEquals(text, text1);
+        if (text.isDisplayed()){
+            System.out.println("Hiển thị thông báo - Epic sadface: Password is required");
+        }else{
+            System.out.println("Case đang bị sai");
+        }
 
+        try {
+            Thread.sleep(1500);
+        } catch(InterruptedException e) {
+            System.out.println("got interrupted!");
+        }
 
+    }
 
+    @Test(priority = 3)
+    void CaseLogin_NoInput() {
+        System.out.println("this test 2 ");
+        LoginPages.username(driver).click();
+        LoginPages.username(driver).sendKeys("");
+        LoginPages.password(driver).click();
+        LoginPages.password(driver).sendKeys("");
+        LoginPages.loginbutton(driver).click();
+        WebElement a = LoginPages.Noti(driver);
+        var text = LoginPages.Noti(driver).getText();
+        //////////////////////////////////////////////
+        if (a.isDisplayed()){
+            System.out.println(text);
+        }else{
+            System.out.println("Case đang bị sai");
+        }
+        //////////////////////////////////////////////
+        try {
+            Thread.sleep(1500);
+        } catch(InterruptedException e) {
+            System.out.println("got interrupted!");
+        }
+        /////////////////////////////////////////////
+
+    }
     @AfterMethod
     void tearDown(){
         System.out.println("logout");

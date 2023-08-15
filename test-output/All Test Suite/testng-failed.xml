@@ -3,11 +3,11 @@
 <suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="D:/java/TestNG_Demo(failed)">
     <classes>
-      <class name="SecondTestCase">
+      <class name="Study.SecondTestCase">
         <methods>
           <include name="viewproduct_detail"/>
         </methods>
-      </class> <!-- SecondTestCase -->
+      </class> <!-- Study.SecondTestCase -->
     </classes>
   </test> <!-- D:/java/TestNG_Demo(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

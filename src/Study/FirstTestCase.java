@@ -1,4 +1,4 @@
-//1.setup - open browser
+package Study;//1.setup - open browser
 //2.login
 //3.close
 

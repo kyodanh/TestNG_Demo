@@ -1,6 +1,10 @@
+package Study;
+
 import org.testng.annotations.*;
 
-public class TC2 {
+public class TC1 {
+
+    //bai hoc ve test annotations và cac phuong chạy test case gom before , after , test
 
     @BeforeClass
     void BeforeClass(){
@@ -24,22 +28,23 @@ public class TC2 {
     }
 
     @Test
-    void test3(){
-        System.out.println("this is test 3");
+    void test1(){
+        System.out.println("this is test 1");
     }
 
     @Test
-    void test4(){
-        System.out.println("this is test 4");
+    void test2(){
+        System.out.println("this is test 2");
     }
 
-    @BeforeSuite
-    void BeforeSuite(){
-        System.out.println("this will execute before suite");
+    @BeforeTest
+    void BeforeTest(){
+        System.out.println("this will execute before test");
     }
 
-    @AfterSuite
-    void AfterSuite(){
-        System.out.println("this will execute after suite");
+    @AfterTest
+    void AfterTest(){
+        System.out.println("this will execute after test");
     }
+
 }
