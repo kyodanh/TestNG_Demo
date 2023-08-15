@@ -9,39 +9,53 @@
     <!--        </classes>-->
     <!--    </test>-->
 
-<!--    <test name="annotationdemo">-->
-<!--        <classes>-->
-<!--            <class name="TC1">-->
-<!--                <methods>-->
-<!--                    <include name="test1"/>-->
-<!--                    <include name="test2"/>-->
-<!--                </methods>-->
-<!--            </class>-->
+<!--        <test name="annotationdemo">-->
+<!--            <classes>-->
+<!--                <class name="TC1">-->
+<!--                    <methods>-->
+<!--                        <include name="test1"/>-->
+<!--                        <include name="test2"/>-->
+<!--                    </methods>-->
+<!--                </class>-->
+<!--                <class name="TC2">-->
+<!--                    <methods>-->
+<!--                        <include name="test3"/>-->
+<!--                        <include name="test4"/>-->
+<!--                    </methods>-->
+<!--                </class>-->
+<!--            </classes>-->
+<!--        </test>-->
 
-<!--            <class name="TC2">-->
-<!--                <methods>-->
-<!--                    <include name="test3"/>-->
-<!--                    <include name="test4"/>-->
-<!--                </methods>-->
-<!--            </class>-->
+<!--    <test name="grouptest">-->
+
+<!--        <groups>-->
+<!--            <run>-->
+<!--                &lt;!&ndash;                <include name="sanity"/>&ndash;&gt;-->
+<!--                &lt;!&ndash;                <include name="regresstion"/>&ndash;&gt;-->
+<!--                <exclude name="sanity"/>-->
+<!--            </run>-->
+<!--        </groups>-->
+
+
+<!--        <classes>-->
+<!--            <class name="GroupingExample"/>-->
 <!--        </classes>-->
 <!--    </test>-->
 
-    <test name="grouptest">
+    <parameter name="brower" value="chrome"></parameter>
+    <parameter name="url" value="https://www.saucedemo.com/"></parameter>
+   <test name="parametertest_chrome">
+       <classes>
+           <class name="ParametersExample"/>
+       </classes>
+   </test>
 
-        <groups>
-            <run>
-<!--                <include name="sanity"/>-->
-<!--                <include name="regresstion"/>-->
-                <exclude name="sanity"/>
-            </run>
-        </groups>
-
-
+    <parameter name="brower" value="Edge"></parameter>
+    <parameter name="url" value="https://www.saucedemo.com/"></parameter>
+    <test name="parametertest_Edge">
         <classes>
-            <class name="GroupingExample"/>
+            <class name="ParametersExample"></class>
         </classes>
+
     </test>
-    
-    
 </suite>
