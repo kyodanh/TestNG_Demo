@@ -1,17 +1,15 @@
 package TestCase;
 
 import Pages.LoginPages;
+import Study.CustomDataProvider;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
-
+import org.testng.annotations.*;
+import DataProvider.LoginData;
 public class LoginTC {
 
     WebDriver driver;
@@ -63,13 +61,13 @@ public class LoginTC {
     }
 
     //////@test là 1 method 
-    @Test(priority = 1)
-    void CaseLoginPass(){
+    @Test(priority = 1,dataProvider = "logindata",dataProviderClass = LoginData.class)
+    void CaseLoginPass(String username, String password){
         System.out.println("CaseLoginPass");
         LoginPages.username(driver).click();
-        LoginPages.username(driver).sendKeys("standard_user");
+        LoginPages.username(driver).sendKeys(username);
         LoginPages.password(driver).click();
-        LoginPages.password(driver).sendKeys("secret_sauce");
+        LoginPages.password(driver).sendKeys(password);
         LoginPages.loginbutton(driver).click();
         try {
             Thread.sleep(1500);

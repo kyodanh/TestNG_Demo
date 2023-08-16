@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-<!--    <parameter name="brower" value="chrome"></parameter>-->
-<!--    <parameter name="url" value="https://www.saucedemo.com/"></parameter>-->
-<!--    <test name="Login_chrome">-->
-<!--        <classes>-->
-<!--            <class name="TestCase.LoginTC"></class>-->
-<!--        </classes>-->
-<!--    </test>-->
+    <parameter name="brower" value="Edge"></parameter>
+    <parameter name="url" value="https://www.saucedemo.com/"></parameter>
+    <test name="Login_chrome">
+        <classes>
+            <class name="TestCase.LoginTC">
+                <methods>
+                    <include name="CaseLoginPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
 
 <!--    <parameter name="brower" value="Edge"></parameter>-->
 <!--    <parameter name="url" value="https://www.saucedemo.com/"></parameter>-->
@@ -18,19 +22,19 @@
 <!--    </test>-->
 
 
-    <parameter name="brower" value="chrome"></parameter>
-    <parameter name="url" value="https://www.saucedemo.com/"></parameter>
-    <parameter name="name_product" value="//*[text()='Sauce Labs Backpack']"></parameter>
-    <parameter name="name_pic" value="//img[@alt='Sauce Labs Backpack']"></parameter>
-    <test name="Home_Chrome">
-        <classes>
-            <class name="TestCase.HomeTC">
-<!--                <methods>-->
-<!--                    <include name="print_product"/>-->
-<!--                </methods>-->
-            </class>
-        </classes>
-    </test>
+<!--    <parameter name="brower" value="chrome"></parameter>-->
+<!--    <parameter name="url" value="https://www.saucedemo.com/"></parameter>-->
+<!--    <parameter name="name_product" value="//*[text()='Sauce Labs Backpack']"></parameter>-->
+<!--    <parameter name="name_pic" value="//img[@alt='Sauce Labs Backpack']"></parameter>-->
+<!--    <test name="Home_Chrome">-->
+<!--        <classes>-->
+<!--            <class name="TestCase.HomeTC">-->
+<!--&lt;!&ndash;                <methods>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <include name="print_product"/>&ndash;&gt;-->
+<!--&lt;!&ndash;                </methods>&ndash;&gt;-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 <!--    <parameter name="brower" value="Edge"></parameter>-->
 <!--    <parameter name="url" value="https://www.saucedemo.com/"></parameter>-->
